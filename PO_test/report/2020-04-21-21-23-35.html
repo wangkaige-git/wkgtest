@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>flie report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-04-16 14:42:26</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:43.314197</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-04-21 21:23:38</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:22.704456</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>flie report</p>
 </div>
@@ -221,26 +221,58 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>homecase.Logincase</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_backstate_book_ticket</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_backstate_book_ticket</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "E:\auto_test\PO_test\case\homecase.py", line 36, in test_backstate_book_ticket
+    self.home_p.backstate_search('王凯歌测试','杭州','北京','2020-04-20')
+  File "E:\auto_test\PO_test\page\home_page.py", line 104, in backstate_search
+    self.send_company(companyname)
+  File "E:\auto_test\PO_test\page\home_page.py", line 46, in send_company
+    self.base.wait_title(title)
+  File "E:\auto_test\PO_test\base\base_method.py", line 57, in wait_title
+    return WebDriverWait(self.driver,30,0.5).until(method)
+  File "C:\Users\wangkaige\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
