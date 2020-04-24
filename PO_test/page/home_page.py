@@ -22,19 +22,19 @@ class HomePage():
 
     # 点击主页面的机票
     def airport(self):
-        ele_xpath = '//*[@id="sidebar"]/ul/li[4]/a'
+        ele_xpath = '//*[@id="sidebar"]/ul/li[2]/a'
         return self.base.find_ele('xpath', ele_xpath).click()
 
     # 点击白屏下单
     def air_order(self):
-        ele_xpath = '//*[@id="sidebar"]/ul/li[4]/ul/li[1]/a/span'
+        ele_xpath = '//*[@id="sidebar"]/ul/li[2]/ul/li[1]/a/span'
         locator = (By.XPATH, ele_xpath)
         self.base.wait_element_located(locator)
         return self.base.find_ele('xpath', ele_xpath).click()
 
     # 点击国内机票录单
     def record_order(self):
-        ele_xpath = '//*[@id="sidebar"]/ul/li[4]/ul/li[4]/a/span'
+        ele_xpath = '//*[@id="sidebar"]/ul/li[2]/ul/li[4]/a/span'
         locator = (By.XPATH, ele_xpath)
         self.base.wait_element_located(locator)
         self.base.find_ele('xpath', ele_xpath).click()
@@ -60,7 +60,7 @@ class HomePage():
         value2 = '/html/body/div[12]/ul/li'
         return self.base.send_and_choose('id', value1, 'xpath', value2, end_city)
 
-    # 选择航班时间
+    # 输入航班时间
     def choose_time(self, flightdate):
         time_id = 'DepDate'
         self.base.find_ele('id', time_id).clear()
@@ -97,7 +97,7 @@ class HomePage():
         # if self.base.find_ele('xpath','/html/body/div[14]/div/div/div[1]'):
         #     raise Exception("企业为现付或状态不正常!")
 
-    def backstate_search(self, companyname, start_city, end_city, flightdate='2020-03-08'):
+    def backstate_search(self, companyname, start_city, end_city, flightdate='2020-05-20'):
         self.close_hint()
         self.airport()
         self.air_order()

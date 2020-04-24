@@ -4,7 +4,8 @@ import openpyxl
 class ReadExcel():
 
     def __init__(self):
-        self.excelpath = 'E:\\auto_test\\PO_test\\data\\test.xlsx'
+        exceldir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.excelpath = exceldir +"\\data\\test.xlsx"
 
     def get_worksheet(self,sheet=0):
         workexcel = openpyxl.load_workbook(self.excelpath)

@@ -1,14 +1,15 @@
 #coding=utf-8
 import configparser
+import os
 
 class ReadConfig():
 
-    def __init__(self,con_filename):
+    def __init__(self,con_filename='LocalElement.ini'):
         """
         con_filename：配置文件的文件名
         """
-        configdir = 'E:\\auto_test\\PO_test\\data'
-        self.configpath = configdir+'\\'+con_filename
+        configdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.configpath = configdir+'\\data\\'+con_filename
 
 
 
@@ -32,4 +33,7 @@ class ReadConfig():
 
 
 
-configfile = ReadConfig('LocalElement.ini')
+if __name__ == "__main__":
+    print (ReadConfig().configpath)
+
+

@@ -33,7 +33,7 @@ class Logincase(unittest.TestCase):
         #self.driver.close()
 
     def test_backstate_book_ticket(self):
-        self.home_p.backstate_search('王凯歌测试','杭州','北京','2020-04-20')
+        self.home_p.backstate_search('王凯歌测试','杭州','北京','2020-05-20')
         self.home_p.more_carbin()
         self.home_p.choose_carbin()
         self.reserve_p.backstage_reserve_ticket('葫芦娃',2,'huluwa',15809283436)
